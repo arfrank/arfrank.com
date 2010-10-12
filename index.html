@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>arfrank.com</title>
+		<script src="http://www.google.com/jsapi"></script>
+		<script type="text/javascript">
+			 // Load jQuery
+			 google.load("jquery", "1.3.2");
+		  	 google.load("jqueryui", "1.7.1");
+		</script>		
+		<style type="text/css">
+			body{
+				background-color:#cccccc;
+				text-align:center;
+				font-variant:small-caps;
+			}
+			h3{
+				font-variant:small-caps;
+			}
+			li{
+				list-style:none;
+			}
+			#splash{
+				padding:36px;
+			}
+		</style>
+	</head>
+	<body>
+			<div id="main">
+			<image id="splash" src="images/splash-web.png" title="arfrank.com - coming soonish" alt="splash picture for arfrank.com"><br />
+			<h1>arfrank.com - coming soonish</h1>
+			<h3>About Me:</h3>
+			<li><a href="http://www.jobspice.com/arfrank">R&eacute;sum&eacute;</a></li>
+			<li><a href="http://www.twitter.com/arfrank">Twitter</a></li>
+				<li><a href="http://www.flickr.com/photos/arfrank">Flickr</a></li>
+				<li><a href="callto:2403505687">240.350.5687</a></li>
+			<h3>Things I've worked on:</h3>
+				<li><a href="http://www.studentsherpas.com">Student Sherpas</a></li>
+				<li><a href="http://www.fitfeud.com">FitFeud</a></li>
+<!--				<li><a href="http://hash.ly">hash.ly</a></li> -->
+				<li><a href="http://www.tensecondsofhappy.com">Ten Seconds of Happy</a></li>
+		       	<li><a href="http://ajsidorov.com">ajsidorov.com</a></li>
+				<li><a href="http://thebigexperiment.info">The Big Experiment</a></li>
+			<script type="text/javascript">
+			$('#splash').click(function(){
+				$(this).spin(10);
+			});
+			$.fn.spin = function(speed_word){
+			  moz = $(this).css('-moz-transform');
+			  webkit = $(this).css('webkit-transform');
+			  already_rotating = ((moz != 'none' && webkit == '') || (moz == '' && webkit != 'none'))
+			  var number = 0;
+			  var speed = 0;
+			  if (already_rotating){
+			    return false;
+			  }else if (typeof(speed_word) == 'number'){
+			    speed = speed_word / 10;
+			  }
+			  var self = this;
+
+			  setInterval(function(){
+			    number += speed;
+			    jQuery(self).css('webkit-transform', 'rotate(-'+number+'deg)');
+			    jQuery(self).css('-moz-transform', 'rotate(-'+number+'deg)');
+			  }, 50)
+			}
+			</script>
+</body>
+</html>
