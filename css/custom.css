@@ -2,7 +2,7 @@ body{
 	width:820px;
 	margin: 35px auto 0 auto;
 	background:#ccc;
-	background-image: url('/images/background.png');
+	background-image: url('/images/background-2.jpg');
 	background-position: top left;
 	background-repeat: no-repeat;
 	background-size:100%;
@@ -23,6 +23,7 @@ header{
 	width:100%;
 }
 header h1{
+	font-variant: small-caps;
 	font-size:42px;
 }
 
@@ -36,6 +37,7 @@ header .buttons{
 	display:none;
 }
 #main h1{
+	font-variant: small-caps;
 	font-size:24px;
 	border-bottom:1px solid #ccc;
 	margin-bottom:10px;
@@ -45,7 +47,7 @@ header .buttons{
 }
 #me{
 	border:3px solid #000;
-	-webkit-box-shadow:10px 10px 10px #000;
+	-webkit-box-shadow:5px 5px 10px #000;
 	
 	width:500px;
 }
@@ -54,6 +56,9 @@ header .buttons{
 }
 .desc{
 	font-size:14px;
+}
+.clearer{
+	clear:both;
 }
 
 /****/

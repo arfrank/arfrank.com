@@ -36,6 +36,9 @@
 			</a>		
 		</div>
 		<h1>Aaron Frank</h1>
+		<div class="clearer">
+			
+		</div>
     </header>
     
     <div id="main">
@@ -49,7 +52,7 @@
 						A managed SMS solution for small businesses.  Currently targeting fitness businesses to help with client engagement and retention.
 					</p>
 				</li>
-				<li><a href="http://www.distroreader.com">DistroReader</a>
+				<li><a href="http://distributedtwilio.appspot.com">DistroReader</a>
 					<p class="desc">
 						A fun project to use Twilio to power text to speech by splitting the text into many small phrases and having people call in to translate them.
 					</p></li>
@@ -81,9 +84,8 @@
 		</div>
 		<div class="sections shown" id="about">
 			<h1 >About</h1>
-			<img src="/images/me.png" alt="Picture of me" id="me"><br><br><br>
-			<p class="desc">My name is Aaron Frank. I am 24 year old, currently based out of Washington DC area.<br>
-				I graduated from the University of Maryland in 2008 with bachelors degrees in Mathematics &amp; Physics.<br> I currently am freelancing and working on my own projects.<br>Contact me at <a href="mailto:arfrank@gmail.com">arfrank@gmail.com</a><br>Follow me on <a href="http://www.twitter.com/arfrank">twitter</a></p>
+			<img src="/images/me.jpg" alt="Picture of me" id="me"><br><br><br>
+			<p class="desc">My name is Aaron Frank. I am 24 years old, and I am based out of the Washington DC area.<br>I graduated from the University of Maryland in 2008 with bachelors degrees in Mathematics &amp; Physics.<br> I currently freelance and work on my own projects.<br>Contact me at <a href="mailto:arfrank@gmail.com">arfrank@gmail.com</a><br>Follow me on <a href="http://www.twitter.com/arfrank">twitter</a></p>
 		</div>
     </div>
     
@@ -100,16 +102,22 @@
     <script src="/js/dd_belatedpng.js?v=1"></script>
   <![endif]-->
   <script type="text/javascript" charset="utf-8">
-  	$(document).ready(function() {
-  		$('.fancy_button').click(function() {
-  			sect = $(this).attr('href');
-			shown = $('.shown');
-			shown.fadeOut(400,function(){
-				$(sect).fadeIn(500).addClass('shown');
-	
+	function clicktouch(button){
+			$('.shown').fadeOut(400,function(){
+				$(this).removeClass('shown');
+				$($(button).attr('href')).fadeIn(1000,function(){
+					$(this).addClass('shown');
+				});
 			});
-			shown.removeClass('shown')
-
+		}
+	
+	
+  	$(document).ready(function() {
+  		$('.fancy_button').click(function(){
+			clicktouch(this);
+		});
+		$('.fancy_button').bind('touchstart',{}, function(){
+			clicktouch(this);
 		});
   	});
   	
