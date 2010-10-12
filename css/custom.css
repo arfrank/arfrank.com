@@ -1,6 +1,6 @@
 body{
 	width:820px;
-	margin: 50px auto 0 auto;
+	margin: 35px auto 0 auto;
 	background:#ccc;
 	background-image: url('/images/background.png');
 	background-position: top left;
@@ -12,8 +12,9 @@ body{
 #container{
 	margin-right:25px;
 	border:5px solid #ffffff;
-	border-radius:25px;
-	height:600px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	border-radius: 25px;	height:600px;
 	-webkit-box-shadow:10px 10px 25px #000;
 	background: #fff;
 	padding: 25px 25px 10px 20px;
