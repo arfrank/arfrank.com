@@ -5,7 +5,7 @@
   <!--[if IE]><![endif]-->
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
+  <title>Aaron Frank</title>
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="/css/style.css?v=1">
   <link rel="stylesheet" href="/css/custom.css?v=1">
   <link rel="stylesheet" media="handheld" href="/css/handheld.css?v=1">
-  <script src="/js/modernizr-1.5.min.js"></script>
 
 </head>
 <!--[if lt IE 7 ]> <body class="ie6"> <![endif]-->
@@ -25,11 +24,67 @@
 
   <div id="container">
     <header>
-
+		<div class="right">
+			<a class="fancy_button" href="#works">
+			  <span>Works</span>
+			</a>		
+			<a class="fancy_button" href="#pictures">
+			  <span>Pictures</span>
+			</a>		
+			<a class="fancy_button" href="#about">
+			  <span>About</span>
+			</a>		
+		</div>
+		<h1>Aaron Frank</h1>
     </header>
     
     <div id="main">
-
+		<div id="works" class="sections hide">
+			<h1>Works</h1>
+				<li><a href="http://www.studentsherpas.com">Student Sherpas</a>
+					<p class="desc">My Summer Storage & Shipping for college students. Now located at 3 universities (UMD, Emory &amp; Lehigh)</p>
+				</li>
+				<li><a href="http://www.pushr.net">Pushr</a>
+					<p class="desc">
+						A managed SMS solution for small businesses.  Currently targeting fitness businesses to help with client engagement and retention.
+					</p>
+				</li>
+				<li><a href="http://www.distroreader.com">DistroReader</a>
+					<p class="desc">
+						A fun project to use Twilio to power text to speech by splitting the text into many small phrases and having people call in to translate them.
+					</p></li>
+				<li><a href="http://www.fitfeud.com">FitFeud</a>
+					<p class="desc">
+						A competitive fitness application. I did a lot of work on the backend to add additional metrics to compete against.
+					</p></li>
+<!--				<li><a href="http://hash.ly">hash.ly</a></li> -->
+				<li><a href="http://www.tensecondsofhappy.appspot.com">Ten Seconds of Happy</a>
+					<p class="desc">
+						A project to allow my artist friend to quickly draw online and share their tiny drawings easily
+					</p>
+				</li>
+		       	<li><a href="http://ajsidorov.com">AJSidorov.com</a>
+					<p class="desc">
+						Artist Website
+					</p>
+				</li>
+			
+		</div>
+		<div id="pictures" class="sections hide">
+			<h1>Pictures</h1>
+			<li>
+				Currently located at <a href="http://www.flickr.com/photos/arfrank">Flickr</a>
+			</li>
+			<li>
+				Published: <a href="http://www.flickr.com/photos/84922240@N00/2500962898/">Rainbow in College Park</a> - <a href="http://www.amazon.com/People-Prince-Georges-County-Maryland/dp/087530897X/ref=sr_1_1?ie=UTF8&s=books&qid=1286900151&sr=1-1-catcorr">Prince George's County, Maryland (Front)</a>
+			</li>
+		</div>
+		<div class="sections shown" id="about">
+			<h1 >About</h1>
+			<img src="/images/me.png" alt="Picture of me" id="me"><br><br><br>
+			<p class="desc">My name is Aaron Frank. I am 24 year old, currently based out of Washington DC area.<br>
+				I graduated from the University of Maryland in 2008 with bachelors degrees in Mathematics &amp; Physics.<br> I currently am freelancing and working on my own projects.<br>Contact me at <a href="mailto:arfrank@gmail.com">arfrank@gmail.com</a><br>Follow me on <a href="http://www.twitter.com/arfrank">twitter</a></p>
+		</div>
     </div>
     
     <footer>
@@ -41,10 +96,23 @@
   <script>!window.jQuery && document.write('<script src="/js/jquery-1.4.2.min.js"><\/script>')</script>
   <script src="/js/plugins.js?v=1"></script>
   <script src="/js/script.js?v=1"></script>
-
   <!--[if lt IE 7 ]>
     <script src="/js/dd_belatedpng.js?v=1"></script>
   <![endif]-->
-  
+  <script type="text/javascript" charset="utf-8">
+  	$(document).ready(function() {
+  		$('.fancy_button').click(function() {
+  			sect = $(this).attr('href');
+			shown = $('.shown');
+			shown.fadeOut(400,function(){
+				$(sect).fadeIn(500).addClass('shown');
+	
+			});
+			shown.removeClass('shown')
+
+		});
+  	});
+  	
+  </script>
 </body>
 </html>
