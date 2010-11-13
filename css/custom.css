@@ -1,6 +1,6 @@
 body{
 	width:820px;
-	margin: 35px auto 0 auto;
+	margin: 30px auto 0 auto;
 	background:#ccc;
 	background-image: url('/images/background-2.jpg');
 	background-position: top left;
@@ -14,13 +14,15 @@ body{
 	border:5px solid #ffffff;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
-	border-radius: 25px;	height:600px;
+	border-radius: 25px;
+	height:610px;
 	-webkit-box-shadow:10px 10px 25px #000;
 	background: #fff;
 	padding: 25px 25px 10px 20px;
 }
 header{
 	width:100%;
+	margin-bottom:10px;
 }
 header h1{
 	font-variant: small-caps;
