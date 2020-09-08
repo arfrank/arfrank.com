@@ -1,0 +1,114 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+h1{
+	font-size: 64px;
+	padding: 10px 0px;	
+}
+ul li{
+list-style-type: none;	
+color:white;
+padding:4px;
+}
+
+html {
+  background: no-repeat center bottom fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#main
+{
+	margin: 40px 0px 0px 150px;
+}
+.reload {
+	font-family: Lucida Sans Unicode 
+	
+}
+.reload:hover{
+	cursor: pointer;
+}
+
+#info{
+	position:absolute;
+	left:20px;
+	bottom:10px;
+	font-size:16px;
+	color:white;
+	text-decoration:underline;
+	
+}
+#copyright{
+	position:absolute;
+	bottom:10px;
+	right:20px;
+	color:white;
+}
+ul{
+	margin-left:205px;
+}
+
+a:link, a:hover, a, a:visited{
+	color:white;
+}
+
+a:hover{
+	background:black;
+}
+a{
+	text-decoration:none;
+}
+
+
+@keyframes shake{ 
+    20% { transform: rotate(15deg); }
+    40% { transform: rotate(-10deg); }
+    60% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+ 
+@-moz-keyframes shake{ 
+    20% { -moz-transform: rotate(15deg); }
+      40% { -moz-transform: rotate(-10deg); }
+      60% { -moz-transform: rotate(5deg); }
+      80% { -moz-transform: rotate(-5deg); }
+      100% { -moz-transform: rotate(0deg); }}
+ 
+@-webkit-keyframes shake {
+    20% { -webkit-transform: rotate(15deg); }
+      40% { -webkit-transform: rotate(-10deg); }
+      60% { -webkit-transform: rotate(5deg); }
+      80% { -webkit-transform: rotate(-5deg); }
+      100% { -webkit-transform: rotate(0deg); }}
+ 
+.shake {
+    animation-name: shake; 
+    animation-duration: 500ms; 
+    animation-iteration-count: 1; 
+    animation-timing-function: linear;
+ 
+    -moz-animation-name: shake; 
+    -moz-animation-duration: 500ms; 
+    -moz-animation-iteration-count: 1; 
+    -moz-animation-timing-function: linear;
+ 
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 500ms;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+}
+#links{
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width:115px;
+    background:rgb(0,0,0);  
+    background: transparent\9;  
+    background:rgba(0,0,0,0.1);  
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66000000,endColorstr=#66000000);  
+    zoom: 1;
+}
