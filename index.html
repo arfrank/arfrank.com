@@ -16,33 +16,42 @@
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="/style.css?v=6">
-		<link rel="stylesheet" href="/animate-custom.css">
+		<link rel="stylesheet" href="/style.css?v=7">
 	</head>
 	<body>
 		<div class="bg-layer" id="bg-a" aria-hidden="true"></div>
 		<div class="bg-layer" id="bg-b" aria-hidden="true"></div>
+		<div class="bg-overlay" aria-hidden="true"></div>
 
-		<main id="main">
-			<h1>Aaron Frank</h1>
-			<ul id="links">
-				<li><a href="https://twitter.com/arfrank">Twitter</a></li>
-				<li><a href="https://www.linkedin.com/in/arfrank/">LinkedIn</a></li>
-				<li><a href="https://www.getFinal.com">Final</a></li>
-			</ul>
+		<main class="stage">
+			<div class="content">
+				<h1 class="wordmark">Aaron&nbsp;&nbsp;Frank</h1>
+				<ul class="nav-links">
+					<li><a href="https://twitter.com/arfrank">Twitter</a></li>
+					<li><a href="https://www.linkedin.com/in/arfrank/">LinkedIn</a></li>
+					<li><a href="https://www.getFinal.com">Final</a></li>
+				</ul>
+			</div>
 		</main>
 
-		<div id="info">
-			<a target="_blank" rel="noopener" id="info_text"></a>
-		</div>
+		<aside class="caption" aria-label="Photo location">
+			<a class="caption__place" id="info_text" target="_blank" rel="noopener"></a>
+			<div class="caption__meta">
+				<span class="caption__coords" id="info_coords"></span>
+				<span class="caption__sep" aria-hidden="true">·</span>
+				<span class="caption__year">© <span id="year"></span></span>
+			</div>
+		</aside>
 
-		<div id="copyright">
-			<button id="change_bg" class="reload" type="button" aria-label="Change background image" title="Change background">&#x21bb;</button>
-			All Images &copy; Aaron Frank <span id="year"></span>
-		</div>
+		<button id="change_bg" class="reload" type="button" aria-label="Change background image" title="Change background">
+			<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+				<path d="M3 12a9 9 0 1 0 3-6.7"/>
+				<path d="M3 4v5h5"/>
+			</svg>
+		</button>
 
-		<script src="/script.js?v=2"></script>
+		<script src="/script.js?v=3"></script>
 	</body>
 </html>
