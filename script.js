@@ -30,8 +30,8 @@
 	var layers = [document.getElementById('bg-a'), document.getElementById('bg-b')];
 	var activeLayer = 0;
 	var currentIndex = -1;
-	var infoEl = document.getElementById('info');
 	var infoText = document.getElementById('info_text');
+	var infoCoords = document.getElementById('info_coords');
 
 	function randomIndex() {
 		var n = Math.floor(Math.random() * bg.length);
@@ -45,6 +45,22 @@
 		var img = new Image();
 		img.src = name + '.jpg';
 		return img;
+	}
+
+	function parseCoords(link) {
+		if (!link) return null;
+		var m = /@(-?\d+\.\d+),(-?\d+\.\d+)/.exec(link);
+		if (!m) return null;
+		return { lat: parseFloat(m[1]), lng: parseFloat(m[2]) };
+	}
+
+	function formatCoords(coords) {
+		if (!coords) return '';
+		var lat = coords.lat;
+		var lng = coords.lng;
+		var latDir = lat >= 0 ? 'N' : 'S';
+		var lngDir = lng >= 0 ? 'E' : 'W';
+		return Math.abs(lat).toFixed(3) + '° ' + latDir + '   ' + Math.abs(lng).toFixed(3) + '° ' + lngDir;
 	}
 
 	function changeBG(forced) {
@@ -62,8 +78,14 @@
 			var nextLayer = layers[1 - activeLayer];
 			var prevLayer = layers[activeLayer];
 			nextLayer.style.backgroundImage = 'url(' + name + '.jpg)';
+
+			// Restart Ken Burns animation by toggling the class
+			nextLayer.classList.remove('is-visible');
+			// Force reflow so the animation can re-run
+			void nextLayer.offsetWidth;
 			nextLayer.classList.add('is-visible');
 			prevLayer.classList.remove('is-visible');
+
 			activeLayer = 1 - activeLayer;
 			currentIndex = nextIndex;
 
@@ -75,17 +97,9 @@
 				} else {
 					infoText.removeAttribute('href');
 				}
+				infoCoords.textContent = formatCoords(parseCoords(info.link));
 			}
 
-			if (!prefersReducedMotion) {
-				infoEl.className = '';
-				// Re-trigger pulse on the next frame so the class change takes effect.
-				requestAnimationFrame(function () {
-					setTimeout(function () { infoEl.className = 'animated pulse'; }, 600);
-				});
-			}
-
-			// Warm the next image so the following swap is instant.
 			preload(bg[(nextIndex + 1) % bg.length]);
 		};
 

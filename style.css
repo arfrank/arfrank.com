@@ -1,204 +1,235 @@
-/* Reset (Eric Meyer v2.0, condensed) */
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
-body{line-height:1}
-ol,ul{list-style:none}
-blockquote,q{quotes:none}
-blockquote:before,blockquote:after,q:before,q:after{content:none}
-table{border-collapse:collapse;border-spacing:0}
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+ul { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
 
-*, *::before, *::after { box-sizing: border-box; }
-
-html, body {
-	min-height: 100%;
-	height: 100%;
+:root {
+	--ink: rgba(255, 255, 255, 0.96);
+	--ink-muted: rgba(255, 255, 255, 0.62);
+	--ink-faint: rgba(255, 255, 255, 0.4);
+	--rule: rgba(255, 255, 255, 0.18);
+	--bg: #0b0b0d;
+	--sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
 body {
-	font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-	color: #fff;
-	background: #111;
+	font-family: var(--sans);
+	color: var(--ink);
+	background: var(--bg);
+	line-height: 1.5;
 	overflow: hidden;
 	position: relative;
 }
 
-/* Two stacked background layers — we crossfade by toggling .is-visible */
+/* === Background photo layers === */
 .bg-layer {
 	position: fixed;
 	inset: 0;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: #111;
+	background-color: #000;
 	opacity: 0;
-	transition: opacity 800ms ease;
+	transition: opacity 1100ms ease;
 	z-index: 0;
 	pointer-events: none;
+	transform: scale(1);
+	will-change: opacity, transform;
 }
 
-.bg-layer.is-visible { opacity: 1; }
-
-@media (prefers-reduced-motion: reduce) {
-	.bg-layer { transition: none; }
+.bg-layer.is-visible {
+	opacity: 1;
+	animation: ken-burns 28s ease-out forwards;
 }
 
-/* A subtle vignette so links remain legible over busy photos */
-body::after {
-	content: '';
+@keyframes ken-burns {
+	from { transform: scale(1); }
+	to   { transform: scale(1.06); }
+}
+
+/* Vignette + tonal overlay so small text reads on every photo */
+.bg-overlay {
 	position: fixed;
 	inset: 0;
-	background:
-		linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.45) 100%),
-		linear-gradient(90deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.25) 100%);
 	pointer-events: none;
 	z-index: 1;
+	background:
+		linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.0) 22%, rgba(0,0,0,0.0) 55%, rgba(0,0,0,0.85) 100%),
+		radial-gradient(120% 80% at 50% 50%, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 100%);
 }
 
-/* Content sits above bg layers and vignette */
-#main, #info, #copyright {
+@media (prefers-reduced-motion: reduce) {
+	.bg-layer { transition: none; animation: none !important; }
+	.bg-layer.is-visible { transform: none; }
+}
+
+/* === Stage (centered name + links) === */
+.stage {
 	position: relative;
 	z-index: 2;
-}
-
-/* Main: name + links */
-#main {
-	margin: 8vh 0 0 clamp(20px, 12vw, 150px);
-	max-width: calc(100% - 40px);
-}
-
-h1 {
-	font-size: clamp(40px, 9vw, 64px);
-	padding: 10px 0;
-	font-weight: 600;
-	letter-spacing: 0.5px;
-	text-shadow: 0 1px 2px rgba(0,0,0,0.4), 0 4px 24px rgba(0,0,0,0.35);
-}
-
-#links {
-	margin-left: clamp(0px, 6vw, 60px);
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	display: inline-block;
-	padding: 4px 10px;
-	background: rgba(0,0,0,0.18);
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
-}
-
-#links li {
-	color: #fff;
-	padding: 4px;
-	font-size: 18px;
-}
-
-a, a:link, a:hover, a:visited {
-	color: #fff;
-	text-decoration: none;
-}
-
-a:hover {
-	background: rgba(0,0,0,0.55);
-}
-
-a:focus-visible {
-	outline: 2px solid #fff;
-	outline-offset: 2px;
-	border-radius: 2px;
-}
-
-/* Info (caption + map link) */
-#info {
-	position: fixed;
-	left: clamp(12px, 3vw, 20px);
-	bottom: 14px;
-	font-size: 15px;
-	color: #fff;
-	max-width: calc(100% - 220px);
-	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-}
-
-#info_text {
-	color: #fff;
-	text-decoration: underline;
-	text-underline-offset: 3px;
-	text-decoration-color: rgba(255,255,255,0.55);
-}
-
-#info_text:empty { display: none; }
-
-/* Copyright + reload */
-#copyright {
-	position: fixed;
-	right: clamp(12px, 3vw, 20px);
-	bottom: 12px;
-	color: #fff;
-	font-size: 14px;
-	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+	min-height: 100vh;
+	min-height: 100dvh;
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	justify-content: center;
+	padding: 0 24px;
 }
 
+.content {
+	text-align: center;
+	transform: translateY(-4vh);
+}
+
+.wordmark {
+	font-weight: 500;
+	font-size: clamp(13px, 1.7vw, 16px);
+	letter-spacing: 0.42em;
+	text-transform: uppercase;
+	color: var(--ink);
+	margin: 0 0 28px;
+	text-indent: 0.42em; /* compensate optical pull from trailing letterspacing */
+	text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* A subtle hairline under the wordmark for editorial feel */
+.wordmark::after {
+	content: '';
+	display: block;
+	width: 28px;
+	height: 1px;
+	background: rgba(255, 255, 255, 0.5);
+	margin: 16px auto 0;
+}
+
+.nav-links {
+	display: flex;
+	justify-content: center;
+	gap: clamp(20px, 4.5vw, 44px);
+	flex-wrap: wrap;
+	font-size: 12px;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.nav-links a {
+	display: inline-block;
+	padding: 6px 2px;
+	color: var(--ink);
+	border-bottom: 1px solid transparent;
+	transition: border-color 200ms ease, color 200ms ease;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.45);
+}
+
+.nav-links a:hover {
+	border-bottom-color: rgba(255, 255, 255, 0.85);
+}
+
+.nav-links a:focus-visible {
+	outline: 1px solid rgba(255, 255, 255, 0.9);
+	outline-offset: 6px;
+	border-radius: 1px;
+}
+
+/* === Caption (location card, bottom-left) === */
+.caption {
+	position: fixed;
+	left: clamp(20px, 4vw, 36px);
+	bottom: clamp(20px, 3vw, 28px);
+	z-index: 3;
+	color: var(--ink);
+	max-width: calc(100% - 120px);
+	text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.caption__place {
+	display: inline-block;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+	color: var(--ink);
+	border-bottom: 1px solid var(--rule);
+	padding-bottom: 3px;
+	transition: border-color 200ms ease;
+}
+
+.caption__place:hover { border-bottom-color: var(--ink); }
+.caption__place:focus-visible { outline: 1px solid var(--ink); outline-offset: 4px; }
+.caption__place:empty { display: none; }
+
+.caption__meta {
+	margin-top: 8px;
+	font-family: var(--mono);
+	font-size: 10.5px;
+	letter-spacing: 0.04em;
+	color: var(--ink-muted);
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.caption__sep {
+	color: var(--ink-faint);
+}
+
+/* === Reload button (bottom-right) === */
 .reload {
+	position: fixed;
+	right: clamp(20px, 4vw, 36px);
+	bottom: clamp(20px, 3vw, 28px);
+	z-index: 3;
+	width: 32px;
+	height: 32px;
+	border-radius: 50%;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 28px;
-	height: 28px;
-	border: 0;
-	border-radius: 999px;
-	background: rgba(0,0,0,0.35);
-	color: #fff;
-	font-family: inherit;
-	font-size: 18px;
-	line-height: 1;
-	cursor: pointer;
-	transition: transform 200ms ease, background-color 200ms ease;
-	-webkit-backdrop-filter: blur(4px);
-	backdrop-filter: blur(4px);
+	color: var(--ink-muted);
+	border: 1px solid var(--rule);
+	transition: color 200ms ease, border-color 200ms ease, transform 400ms ease, background-color 200ms ease;
 }
 
 .reload:hover {
-	background: rgba(0,0,0,0.55);
-	transform: rotate(45deg);
+	color: var(--ink);
+	border-color: var(--ink);
+	background-color: rgba(255, 255, 255, 0.05);
 }
 
-.reload:active {
-	transform: rotate(180deg);
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.reload, .reload:hover, .reload:active { transition: none; transform: none; }
-}
+.reload:active { transform: rotate(360deg); }
 
 .reload:focus-visible {
-	outline: 2px solid #fff;
-	outline-offset: 2px;
+	outline: 1px solid var(--ink);
+	outline-offset: 4px;
 }
 
-/* Mobile: stack the bottom bits so they don't collide */
-@media (max-width: 560px) {
-	#main {
-		margin-top: 6vh;
-		margin-left: 20px;
-	}
-	#links { margin-left: 0; }
-	#info {
-		position: static;
-		margin: 16px 20px 8px;
-		max-width: none;
-	}
-	#copyright {
-		position: static;
-		margin: 8px 20px 16px;
-		font-size: 13px;
-		justify-content: flex-start;
-	}
-	body { overflow: auto; }
-}
-
-/* The pulse animation defined in animate-custom.css can run too aggressively;
-   suppress for users who don't want motion. */
 @media (prefers-reduced-motion: reduce) {
-	.animated { animation: none !important; }
+	.reload, .reload:active { transition: color 200ms ease, border-color 200ms ease; transform: none; }
+}
+
+/* === Mobile === */
+@media (max-width: 640px) {
+	.stage {
+		padding-top: 22vh;
+		align-items: flex-start;
+	}
+
+	.content { transform: none; }
+
+	.caption {
+		max-width: calc(100% - 80px);
+	}
+}
+
+/* Tighten on very narrow widths */
+@media (max-width: 360px) {
+	.wordmark { letter-spacing: 0.32em; }
+	.nav-links { gap: 14px; }
 }
