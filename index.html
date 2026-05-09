@@ -18,18 +18,21 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-		<link rel="stylesheet" href="/style.css?v=7">
+		<link rel="stylesheet" href="/style.css?v=8">
 	</head>
 	<body>
-		<div class="bg-layer" id="bg-a" aria-hidden="true"></div>
-		<div class="bg-layer" id="bg-b" aria-hidden="true"></div>
+		<div class="bg-stack" aria-hidden="true">
+			<div class="bg-layer" id="bg-a"></div>
+			<div class="bg-layer" id="bg-b"></div>
+		</div>
 		<div class="bg-overlay" aria-hidden="true"></div>
+		<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 		<main class="stage">
 			<div class="content">
 				<h1 class="wordmark">Aaron&nbsp;&nbsp;Frank</h1>
 				<ul class="nav-links">
-					<li><a href="https://twitter.com/arfrank">Twitter</a></li>
+					<li><a href="https://x.com/arfrank">X</a></li>
 					<li><a href="https://www.linkedin.com/in/arfrank/">LinkedIn</a></li>
 					<li><a href="https://www.getFinal.com">Final</a></li>
 					<li><a href="/wood/">Wood</a></li>
@@ -46,13 +49,16 @@
 			</div>
 		</aside>
 
-		<button id="change_bg" class="reload" type="button" aria-label="Change background image" title="Change background">
-			<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-				<path d="M3 12a9 9 0 1 0 3-6.7"/>
-				<path d="M3 4v5h5"/>
-			</svg>
-		</button>
+		<div class="bg-controls">
+			<span class="bg-count" id="bg-count" aria-hidden="true"></span>
+			<button id="change_bg" class="reload" type="button" aria-label="Change background image" title="Next photo (or press →)">
+				<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+					<path d="M3 12a9 9 0 1 0 3-6.7"/>
+					<path d="M3 4v5h5"/>
+				</svg>
+			</button>
+		</div>
 
-		<script src="/script.js?v=3"></script>
+		<script src="/script.js?v=4"></script>
 	</body>
 </html>
