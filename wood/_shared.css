@@ -1,0 +1,34 @@
+/* Shared reset + tokens used by all wood variants */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+ul, ol { list-style: none; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+:root {
+	--sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+	--sans-display: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	--mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body { font-family: var(--sans); line-height: 1.55; }
+
+/* Generic placeholder block — used where a photo hasn't been added yet */
+.ph {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 4 / 3;
+	background:
+		repeating-linear-gradient(0deg, rgba(0,0,0,0.025) 0 1px, transparent 1px 6px),
+		linear-gradient(135deg, #c8b89c 0%, #a08866 100%);
+	color: rgba(0, 0, 0, 0.25);
+	font-family: var(--mono);
+	font-size: 11px;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.ph::before { content: 'photo pending'; }
