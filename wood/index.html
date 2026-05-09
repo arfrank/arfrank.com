@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#1a1411">
+		<meta name="robots" content="noindex, nofollow">
+		<title>Woodworking — Aaron Frank</title>
+		<link rel="icon" href="/favicon.ico">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/wood/_shared.css">
+		<link rel="stylesheet" href="/wood/style.css?v=6">
+	</head>
+	<body>
+		<div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+		<aside class="indicator" aria-live="polite">
+			<span class="indicator__num">01</span>
+			<span class="indicator__sep">/</span>
+			<span class="indicator__total">12</span>
+			<span class="indicator__title">—</span>
+		</aside>
+
+		<button class="to-top" aria-label="Back to top" type="button" hidden>
+			<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+		</button>
+
+		<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+		<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+			<button class="lightbox__close" type="button" aria-label="Close">
+				<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"/></svg>
+			</button>
+			<button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Previous photo">
+				<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+			</button>
+			<button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Next photo">
+				<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+			</button>
+			<img class="lightbox__img" alt="">
+			<div class="lightbox__caption">
+				<span class="lightbox__title"></span>
+				<span class="lightbox__count"></span>
+			</div>
+		</div>
+
+		<header class="masthead">
+			<a class="masthead__home" href="/">arfrank.com</a>
+			<h1 class="masthead__title">Woodworking</h1>
+			<p class="masthead__lede">Pieces from the workshop.</p>
+		</header>
+
+		<main class="gallery">
+
+			<article class="piece" data-num="01">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_0802.jpg" alt="" loading="eager" fetchpriority="high" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">01</span>
+						<h2 class="piece__title">Candle Holders</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+						<div><dt>Method</dt><dd>Hand-carved</dd></div>
+					</dl>
+				</header>
+			</article>
+
+			<article class="piece" data-num="02">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_3125.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">02</span>
+						<h2 class="piece__title">Box</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+						<div><dt>Form</dt><dd>Lidded</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_3126.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_3127.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_3128.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="03">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_4901.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">03</span>
+						<h2 class="piece__title">Wall Art</h2>
+						<p class="piece__lede">For a friend.</p>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>Mixed hardwood</dd></div>
+						<div><dt>Method</dt><dd>Frame &amp; inlay</dd></div>
+					</dl>
+				</header>
+			</article>
+
+			<article class="piece" data-num="04">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_5187 2.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">04</span>
+						<h2 class="piece__title">Lamp</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>Beetle-kill pine</dd></div>
+						<div><dt>Form</dt><dd>Standing</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_5185.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5186.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5188.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5189.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5190.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5191 2.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5048.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5049.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/photo-27977_singular_display_fullPicture.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="05">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_5209.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">05</span>
+						<h2 class="piece__title">Table</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>Beetle-kill pine</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_5207.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5208.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="06">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_8818.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">06</span>
+						<h2 class="piece__title">Cutting / Charcuterie Board</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+						<div><dt>Detail</dt><dd>Juice groove</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_5813.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5814.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_5815.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="07">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_6507 2.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">07</span>
+						<h2 class="piece__title">Box</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>Beetle-kill pine</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_6506.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_6429.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="08">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_6684 2.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">08</span>
+						<h2 class="piece__title">Door</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+						<div><dt>Method</dt><dd>Frame &amp; inlay</dd></div>
+					</dl>
+				</header>
+			</article>
+
+			<article class="piece" data-num="09">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_6923.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">09</span>
+						<h2 class="piece__title">Stool</h2>
+						<p class="piece__lede">For my kid.</p>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_6952.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_6953.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="10">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_7290.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">10</span>
+						<h2 class="piece__title">Long Table</h2>
+						<p class="piece__lede">18&Prime; tall.</p>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Material</dt><dd>—</dd></div>
+						<div><dt>Height</dt><dd>18 in</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_7288.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7289.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7291.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7292.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="11">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_7864 2.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">11</span>
+						<h2 class="piece__title">Kids Adirondack</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Form</dt><dd>Adirondack chair</dd></div>
+						<div><dt>Scale</dt><dd>Child-size</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_7862.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7863.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7865.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7866.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7867.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7868.jpg" alt="" loading="lazy" decoding="async">
+					<img src="/wood/photos-web/IMG_7893 2.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+			<article class="piece" data-num="12">
+				<figure class="piece__hero"><img src="/wood/photos-web/IMG_8291.jpg" alt="" loading="lazy" decoding="async"></figure>
+				<header class="piece__caption">
+					<div class="piece__caption-left">
+						<span class="piece__num">12</span>
+						<h2 class="piece__title">Deck Sectional</h2>
+					</div>
+					<dl class="piece__meta">
+						<div><dt>Form</dt><dd>L-shape, built-in</dd></div>
+					</dl>
+				</header>
+				<div class="spec__details">
+					<img src="/wood/photos-web/IMG_8292.jpg" alt="" loading="lazy" decoding="async">
+				</div>
+			</article>
+
+		</main>
+
+		<footer class="colophon">
+			<p>© Aaron Frank <span id="year"></span> · <a href="/">arfrank.com</a></p>
+		</footer>
+
+		<script src="/wood/script.js?v=5"></script>
+	</body>
+</html>
