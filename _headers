@@ -1,0 +1,3 @@
+/.well-known/appspecific/com.tesla.3p.public-key.pem
+  Content-Type: application/x-pem-file
+  Cache-Control: public, max-age=300
